@@ -2,15 +2,18 @@
 
 <title>Annecy - Voyage</title>
 
-<?php
-    require("header.php")
-?>
+    <?php require("header.php");?>
+
 <body>
+
+    <?php include("home.php");?>
 
 </body>
 
 <footer>
-    <?php include("footer.php")?>
+
+    <?php require("footer.php");?>
+
 </footer>
 </html>
 
