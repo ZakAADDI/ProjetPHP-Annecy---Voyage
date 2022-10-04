@@ -22,7 +22,7 @@
 ### programme qui utilise le protocole HTTP pour fournir les fichiers qui constituent les pages Web que les utilisateurs ont demandées via des requêtes transmises par les clients HTPP de leurs ordinateurs.
 
 ## fonction include() : 
-### prend tout le contenu d'un fichier php spécifique et l'inclut dans le fichier courant
+### prend tout le contenu d'un fichier php spécifique et l'inclut dans le fichier courant.
 
 ## fonction require() :
-### prend tout le contenu d'un fichier php spécifique et l'inclut dans le fichier courant
+### prend tout le contenu d'un fichier php spécifique et l'inclut dans le fichier courant.
