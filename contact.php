@@ -1,3 +1,8 @@
+<?php
+$title = "Contact";
+include('header.php');
+?>
+
 <html>
 <link rel="stylesheet" href="style.css">
 
@@ -18,3 +23,7 @@
 </div>
 
 </html>
+
+<?php
+include('footer.php');
+?>

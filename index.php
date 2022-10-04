@@ -1,11 +1,4 @@
-<html>
-
-<link rel="style.css" href="">
-<title>Annecy - Voyage</title>
-<body>
 <?php
-
-include("header.php");
 
 if(isset($_GET['page'])){
     $request_page = $_GET['page'];
@@ -27,8 +20,6 @@ switch ($request_page) {
         include '404.php';
         break;
 }
-
-require('footer.php');
 ?>
 </body>
 </html>

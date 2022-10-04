@@ -1,3 +1,7 @@
+<?php
+include('header.php');
+?>
+
 <html>
 <link rel="style.css">
 <div>
@@ -5,3 +9,7 @@
 </div>
     
 </html>
+
+<?php
+include('footer.php');
+?>
