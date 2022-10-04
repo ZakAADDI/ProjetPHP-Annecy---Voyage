@@ -11,10 +11,34 @@
 .cards3{
    display: flex;
    justify-content: center;
-   justify-content: space-between;
+  
+}
+
+#lac{
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .card-img-top{
     background-color: rgb(204, 201, 201);
+    text-align: center;
 }
 
+.mb-3{
+    width: 600px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#button{
+    width: 100px;
+    margin-top: 50px;
+
+}
+
+#card_about{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}

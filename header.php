@@ -1,26 +1,26 @@
 <html>
 <head>
-    <?php require('head.php'); ?>
+    <?php include('head.php'); ?>
 </head>
 
 <body>
     <!-- CSS only -->
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Annecy - Voyage</a>
+    <a class="navbar-brand" href="?page=home">Annecy - Voyage</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="?page=home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">About</a>
+          <a class="nav-link active" href="?page=about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Contact</a>
+          <a class="nav-link active" href="?page=contact">Contact</a>
         </li>
       </ul>
     </div>

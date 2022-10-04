@@ -1,19 +1,35 @@
 <html>
 
+<link rel="style.css" href="">
 <title>Annecy - Voyage</title>
-
-    <?php require("header.php");?>
-
 <body>
+<?php
 
-    <?php include("home.php");?>
+include("header.php");
 
+if(isset($_GET['page'])){
+    $request_page = $_GET['page'];
+}else{
+    $request_page = 'home';
+}
+
+switch ($request_page) {
+    case 'home':
+        include 'home.php';
+        break;
+    case 'about':
+        include 'about.php';
+        break;
+    case 'contact':
+        include 'contact.php';
+        break;
+    default:
+        include 'notfound.php';
+        break;
+}
+
+require('footer.php');
+?>
 </body>
-
-<footer>
-
-    <?php require("footer.php");?>
-
-</footer>
 </html>
 

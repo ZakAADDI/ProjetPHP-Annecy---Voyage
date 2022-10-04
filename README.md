@@ -1,7 +1,7 @@
 # Qu'est-ce que PHP ? Les notions à connaître.
 
 ## Apache :
-### serveur HTTP le plus répandu. 
+### logiciel qui permet de monter un serveur HTTP. 
 
 ## Navigateur :
 ### logiciel qui permet d'afficher des sites Internet, télécharger des fichiers et faire des recherches.
@@ -26,3 +26,6 @@
 
 ## fonction require() :
 ### prend tout le contenu d'un fichier php spécifique et l'inclut dans le fichier courant.
+
+## design pattern :
+### façon standard de résoudre un problème de conception logiciel récurrent.
