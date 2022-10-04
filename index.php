@@ -24,7 +24,7 @@ switch ($request_page) {
         include 'contact.php';
         break;
     default:
-        include 'notfound.php';
+        include '404.php';
         break;
 }
 
