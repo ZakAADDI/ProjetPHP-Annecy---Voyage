@@ -3,6 +3,52 @@ $title = "Contact";
 include('header.php');
 ?>
 
+<?php
+session_start();
+?>
+
+<?php
+
+@$user_civility = $_POST['user_civility'];
+@$user_name = $_POST['user_name'];
+@$user_firstname = $_POST['user_firstname'];
+@$user_mail = $_POST['user_mail'];
+@$pattern_email = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^";
+@$user_subject = $_POST['user_subject'];
+@$user_message = $_POST['user_message'];
+@$msg_length = strlen ($user_message);
+@$submit = $_POST['submit'];
+
+$valid = 'Merci, votre message à bien été envoyé.';
+$error = '';
+$msg_short = 'Votre message est trop court.';
+
+if(isset($submit)){
+    if(empty($user_civility)) $error= "<li>Civilité est vide.</li>";
+    if(empty($user_name)) $error.= "<li>Nom est vide.</li>";
+    if(empty($user_firstname)) $error.= "<li>Prénom est vide.</li>";
+    if(empty($user_mail) OR (!preg_match($pattern_email,$user_mail))) $error.= "<li>email est vide.</li>";
+    if(empty($user_subject)) $error.= "<li>Objet du message est vide.</li>";
+    if(empty($user_name)) $error.= "<li>Message est vide.</li>";
+    if(!empty($user_message) && ($msg_length < 5)) $error.= "<li>Message trop court.</li>";
+}
+
+$data = array (
+        'Civilité' => $user_civility,
+        'Nom' => $user_name,
+        'Prénom' => $user_firstname,
+        'eMail' => $user_mail,
+        'Objet' => $user_subject,
+        'Message' => $user_message,
+);
+
+$_SESSION['data'] = $data;
+
+file_put_contents('data.txt', $data);
+
+?>
+
+
 <html>
 
 <link rel="stylesheet" href="style.css">
@@ -12,34 +58,12 @@ include('header.php');
                 <h2> Envoyez-nous un petit message ! </h2>
             </div> <br>
 
-<?php
-
-$user_civility = $_POST['user_civility'];
-$user_name = $_POST['user_name'];
-$user_firstname = $_POST['user_firstname'];
-$user_mail = $_POST['user_mail'];
-$user_subject = $_POST['user_subject'];
-$user_message = $_POST['user_message']; 
-
-if(isset($_POST['user_civility']) AND isset($_POST['user_name']) AND isset($_POST['user_firstname']) AND isset($_POST['user_mail']) 
-    AND isset($_POST['user_subject']) AND isset($_POST['user_message'])){    
-        
-        echo 'Merci, votre message à bien été envoyé !';
-    
-    }else{(empty($_POST['user_civiliy']) OR empty($_POST['user_name']) OR empty($_POST['user_firstname']) OR empty($_POST['user_mail']) 
-        OR isset($_POST['user_subject']) OR isset($_POST['user_message'])){
-            echo 'Les champs sont vide';
-    }
-    ?>
-
-    <-- Contact form >
-
-<form action="index.php?page=contact" method="post">
+<form action="contact.php" method="post">
     
     <div>
         <select name="user_civility" id="civility">
           <option value="">-- Civilité --</option>
-          <option value="Fomme">Femme</option>
+          <option value="Femme">Femme</option>
           <option value="Hemme">Homme</option>
         </select>
 
@@ -82,9 +106,13 @@ if(isset($_POST['user_civility']) AND isset($_POST['user_name']) AND isset($_POS
     </div>
 
     <div>
-        <input type="submit" value="Envoyer">
+        <input type="submit" value="Envoyer" name="submit">
     </div>
+
 </form>
+
+     <div> <?php echo @$error ?> </div>
+
 </div>
 </html>
 
